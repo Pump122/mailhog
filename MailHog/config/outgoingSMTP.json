@@ -1,0 +1,11 @@
+{
+    "server name": {
+        "name": "server name",
+        "host": "Gmail",
+        "port": "5051",
+        "email": "callumbolitho@gmail.com",
+        "username": "...",
+        "password": "cktezbxfvizwpzbz",
+        "mechanism": "PLAIN"
+    }
+}

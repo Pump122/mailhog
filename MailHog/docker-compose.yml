@@ -1,0 +1,41 @@
+# WARNING!! This is to build from source
+
+# to use a version that is prebuilt copy one of the entries from the examples folder!
+
+
+version: "3"
+services:
+#  redis:
+#    image: redis
+#  ohmyform:
+#    build: .
+#    environment:
+#      CREATE_ADMIN: "TRUE"
+#      MAILER_URI: smtp://mail:1025
+#      DATABASE_DRIVER: postgres
+#      DATABASE_URL: postgresql://root:root@db:5432/ohmyform
+#      LOGIN_NOTE: "login with root:root!"
+#      SECRET_KEY: 12345
+#     - redis
+#      - mail
+#    ports:
+#      - "5200:3000"
+#    depends_on:
+#      - db
+#      - redis
+  mail:
+    image: mailhog3
+    ports:
+      - "5051:8025"
+    volumes:
+      - ./config:/config
+    environment: 
+      MH_OUTGOING_SMTP: "/config/outgoingSMTP.json"
+#  db:
+#    image: postgres:10-alpine
+#    volumes:
+#      - ./pg_data:/var/lib/postgresql/data
+#    environment:
+#      POSTGRES_USER: root
+#      POSTGRES_PASSWORD: root
+#      POSTGRES_DB: ohmyform
